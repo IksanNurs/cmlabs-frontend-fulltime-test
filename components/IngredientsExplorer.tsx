@@ -1,7 +1,8 @@
 'use client';
 
-import { useDeferredValue, useEffect, useMemo, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { SearchField } from './SearchField';
 import { getIngredients, type Ingredient } from '@/lib/themealdb';
 
@@ -106,8 +107,23 @@ export function IngredientsExplorer() {
               className="ingredient-card"
               href={`/ingredients/${encodeURIComponent(ingredient.name)}`}
             >
-              <div className="ingredient-badge">{ingredient.name.slice(0, 2).toUpperCase()}</div>
-              <div>
+              <div className="ingredient-thumb">
+                {ingredient.thumbnail ? (
+                  <Image
+                    src={ingredient.thumbnail}
+                    alt={ingredient.name}
+                    width={240}
+                    height={240}
+                  />
+                ) : (
+                  <div className="ingredient-badge">{ingredient.name.slice(0, 2).toUpperCase()}</div>
+                )}
+              </div>
+              <div className="ingredient-copy">
+                <div className="ingredient-meta">
+                  <span className="pill">{ingredient.type}</span>
+                  <span className="ingredient-id">#{ingredient.id}</span>
+                </div>
                 <h3>{ingredient.name}</h3>
                 <p>{ingredient.description}</p>
               </div>

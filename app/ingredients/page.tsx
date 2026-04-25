@@ -8,7 +8,7 @@ export default function IngredientsPage() {
         <PageHeader
           crumbs={[{ label: 'Home', href: '/' }, { label: 'Ingredients' }]}
           title="Ingredients"
-          description="Browse every ingredient from TheMealDB. Use the front-end search to quickly find an item, then open it to see meals that use it."
+          description="Browse every ingredient from TheMealDB, complete with thumbnails, type labels, and descriptions. Use the search to quickly find an item, then open it to see meals that use it."
         />
         <IngredientsExplorer />
       </div>

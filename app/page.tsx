@@ -26,8 +26,8 @@ export default function HomePage() {
           <span className="eyebrow">CMLABS FE-PT-02-2</span>
           <h1>Meal Ingredient Explorer</h1>
           <p>
-            A polished Next.js implementation for the practical test, built around
-            TheMealDB API with responsive layouts, atomic components, and fast front-end search.
+            A polished Next.js implementation for the practical test, built around TheMealDB API
+            with responsive layouts, atomic components, and fast front-end search.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="/ingredients">
@@ -50,6 +50,24 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="feature-row">
+        <article className="feature-tile">
+          <span className="feature-kicker">Required</span>
+          <h3>Ingredients list and search</h3>
+          <p>Browse the full ingredient directory from the API and narrow it instantly on the client side.</p>
+        </article>
+        <article className="feature-tile">
+          <span className="feature-kicker">Required</span>
+          <h3>Ingredient detail with meal filter</h3>
+          <p>Select any ingredient to see meals that use it, then drill into the recipe cards.</p>
+        </article>
+        <article className="feature-tile">
+          <span className="feature-kicker">Optional done</span>
+          <h3>Meals detail page</h3>
+          <p>The recipe detail includes image, instructions, ingredients, and embedded YouTube tutorial.</p>
+        </article>
       </section>
     </main>
   );

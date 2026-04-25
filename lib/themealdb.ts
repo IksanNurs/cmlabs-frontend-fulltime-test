@@ -4,6 +4,7 @@ type IngredientRaw = {
   idIngredient?: string;
   strIngredient?: string;
   strDescription?: string | null;
+  strThumb?: string | null;
   strType?: string | null;
 };
 
@@ -17,6 +18,7 @@ export type Ingredient = {
   id: string;
   name: string;
   description: string;
+  thumbnail: string;
   type: string;
 };
 
@@ -58,6 +60,7 @@ export async function getIngredients(): Promise<Ingredient[]> {
       id: item.idIngredient ?? item.strIngredient ?? '',
       name: item.strIngredient?.trim() ?? '',
       description: item.strDescription?.trim() || 'Fresh ingredient collected from TheMealDB.',
+      thumbnail: item.strThumb?.trim() || '',
       type: item.strType?.trim() || 'Ingredient',
     }))
     .filter((item) => item.name.length > 0);
